@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#333333" />
+    <meta property="og:title" content="Final Offer" />
+    <meta
+      property="og:description"
+      content="Touchless car buying: Buy when its right for you"
+    />
+    <meta property="og:url" content="https://final-offer.web.app/" />
+
+    <meta
+      property="og:image"
+      content="https://final-offer.web.app/logo-512.png"
+    />
+    <meta
+      property="twitter:image"
+      content="https://final-offer.web.app/logo-512.png"
+    />
+
+    %sapper.base%
+
+    <link rel="stylesheet" href="global.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/svelte-material-ui@4.1.0/bare.min.css"
+    />
+    <link rel="stylesheet" href="client/smui.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+    />
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Sapper creates a <script> tag containing `src/client.js`
+	     and anything else it needs to hydrate the app and
+	     initialise the router -->
+    %sapper.scripts%
+
+    <!-- Sapper generates a <style> tag containing critical CSS
+	     for the current page. CSS for the rest of the app is
+	     lazily loaded when it precaches secondary pages -->
+    %sapper.styles%
+
+    <!-- This contains the contents of the <svelte:head> component, if
+	     the current page has one -->
+    %sapper.head%
+  </head>
+  <body>
+    <!-- The application will be rendered inside this element,
+	     because `src/client.js` references it -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: 'AIzaSyB0z0rwqjKC4TYIk5dBt8DPcMajBiWUb3Q',
+        authDomain: 'final-offer.firebaseapp.com',
+        databaseURL: 'https://final-offer-default-rtdb.firebaseio.com',
+        projectId: 'final-offer',
+        storageBucket: 'final-offer.appspot.com',
+        messagingSenderId: '273393139223',
+        appId: '1:273393139223:web:6673f43526de03856ee652',
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <div id="sapper">%sapper.html%</div>
+  </body>
+</html>
